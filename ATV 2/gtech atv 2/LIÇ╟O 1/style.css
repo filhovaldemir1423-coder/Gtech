@@ -1,0 +1,169 @@
+/* 1. Configuração básica da página */
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    /* Texto branco para ler no fundo escuro */
+    font-family: "Science Gothic", sans-serif;
+    /* Fonte mais limpa (opcional) */
+    overflow-x: hidden;
+    /* Evita barra de rolagem horizontal */
+}
+
+/* 2. O Container do Fundo (Fica fixo atrás de tudo) */
+.aurora-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0f172a;
+    /* Fundo azul noturno */
+    z-index: -1;
+    /* Joga o fundo para trás do texto */
+    overflow: hidden;
+}
+
+/* 3. Estilo das "luzes" (Bolhas) */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    /* O segredo do efeito suave */
+    opacity: 0.7;
+    animation: float 10s infinite alternate;
+}
+
+/* Luz 1: Verde */
+.blob-1 {
+    background: #4ade80;
+    width: 500px;
+    height: 500px;
+    top: -100px;
+    left: -100px;
+    animation-duration: 15s;
+}
+
+/* Luz 2: Azul */
+.blob-2 {
+    background: #60a5fa;
+    width: 400px;
+    height: 400px;
+    bottom: -50px;
+    right: -50px;
+    animation-duration: 12s;
+    animation-delay: -2s;
+}
+
+/* Luz 3: Roxo */
+.blob-3 {
+    background: #a855f7;
+    width: 300px;
+    height: 300px;
+    top: 40%;
+    left: 40%;
+    animation-duration: 18s;
+    animation-delay: -5s;
+}
+
+/* 4. A Animação de movimento */
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(50px, 80px) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-30px, -50px) scale(0.9);
+    }
+}
+
+/* Estilo extra para melhorar a leitura dos links no fundo escuro */
+a {
+    color: #4ade80;
+    /* Verde neon para combinar */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+h1,
+h2 {
+    padding: 10px;
+
+}
+
+p {
+    padding: 10px;
+}
+
+/* Container para alinhar os botões */
+.menu-botoes {
+    display: flex;
+    gap: 20px;
+    /* Espaço entre os botões */
+    flex-wrap: wrap;
+    /* Se a tela for pequena, joga pra linha de baixo */
+    margin: 30px 0;
+    /* Espaço acima e abaixo do menu */
+}
+
+/* O Estilo do Botão Neon */
+.botao-neon {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* Letras maiúsculas */
+    text-decoration: none;
+    /* Tira o sublinhado padrão */
+    color: #fcfcfc;
+    /* Texto Verde Neon */
+    border: 2px solid #4ade80;
+    /* Borda Verde Neon */
+    border-radius: 50px;
+    /* Bordas arredondadas */
+    background: transparent;
+    /* Fundo transparente */
+    transition: all 0.3s ease;
+    /* Animação suave */
+
+    /* Um brilho leve inicial */
+    box-shadow: 0 0 5px rgba(74, 222, 128, 0.2);
+    backdrop-filter: blur(5px);
+    /* Efeito de vidro fosco atrás */
+}
+
+/* O que acontece quando passa o mouse (HOVER) */
+.botao-neon:hover {
+    background-color: #4ade80;
+    /* O fundo fica verde */
+    color: #0f172a;
+    /* O texto fica escuro para ler melhor */
+    box-shadow: 0 0 20px #4ade80, 0 0 40px #4ade80;
+    /* Brilho intenso (Glow) */
+    transform: translateY(-3px);
+    /* O botão "flutua" um pouco pra cima */
+    cursor: pointer;
+}
+
+.video-container {
+    margin: auto;
+    text-align: center;
+}
+
+.video-player {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius:0;
+    box-shadow: 0;
+}
